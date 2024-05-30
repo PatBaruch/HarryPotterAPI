@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the side menu */
+        .menu-mobile {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-open {
+            transform: translateY(0);
+        }
+
+        .menu-desktop {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-open-desktop {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white" data-house="Gryffindor">
+    <header class="flex items-center justify-between p-4 bg-black text-white fixed top-0 left-0 right-0 z-20">
+        <a href="index.html" class="text-xl font-bold">HARRY POTTER</a>
+        <div class="flex items-center space-x-4">
+            <button id="menuButton" class="hidden md:block bg-white text-black px-4 py-2 rounded">MENU</button>
+            <button id="burgerButton" class="md:hidden text-white focus:outline-none">
+                <!-- Heroicons burger menu icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <nav id="mobileMenu" class="fixed top-0 left-0 right-0 bg-white text-black menu-mobile z-10 md:hidden">
+        <ul class="divide-y divide-black border-b border-black space-y-0 text-center pt-16">
+            <li><a href="/html/elixirs.html" class="block py-2">ELIXIRS</a></li>
+            <li><a href="/html/ingridients.html" class="block py-2">INGRIDIENTS</a></li>
+            <li><a href="/html/spells.html" class="block py-2">SPELLS</a></li>
+            <li><a href="/html/wizzards.html" class="block py-2">WIZZARDS</a></li>
+        </ul>
+    </nav>
+
+    <nav id="desktopMenu" class="fixed top-0 right-0 w-64 h-full bg-black text-white menu-desktop z-10 hidden md:block pt-16">
+        <ul class="space-y-4 text-center">
+            <li><a href="/html/elixirs.html" class="block py-2">ELIXIRS</a></li>
+            <li><a href="/html/ingridients.html" class="block py-2">INGRIDIENTS</a></li>
+            <li><a href="/html/spells.html" class="block py-2">SPELLS</a></li>
+            <li><a href="/html/wizzards.html" class="block py-2">WIZZARDS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-40 md:pt-20" style="padding-top: 5rem;">
+        <!-- Content about Slytherin will be dynamically populated here -->
+    </main>
+
+    <script src="../assets/js/fetchHouseData.js"></script>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const burgerButton = document.getElementById('burgerButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const desktopMenu = document.getElementById('desktopMenu');
+
+        // Function to toggle the mobile menu
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('menu-open');
+        }
+
+        // Function to toggle the desktop menu
+        function toggleDesktopMenu() {
+            desktopMenu.classList.toggle('menu-open-desktop');
+        }
+
+        // Add event listeners
+        burgerButton.addEventListener('click', toggleMobileMenu);
+        menuButton.addEventListener('click', toggleDesktopMenu);
+    </script>
+</body>
+
+</html>
