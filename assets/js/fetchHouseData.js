@@ -2,10 +2,10 @@ async function fetchHouseData(houseName) {
     const proxyUrl = 'http://localhost:3000/api/houses';
 
     const houseImages = {
-      'slytherin': '../assets/images/slytherin.webp',
-      'gryffindor': '../assets/images/gryffindor.webp',
-      'ravenclaw': '../assets/images/ravenclaw.webp',
-      'hufflepuff': '../assets/images/hufflepuff.webp',
+      'slytherin': '/images/slytherin.webp',
+      'gryffindor': '/images/gryffindor.webp',
+      'ravenclaw': '/images/ravenclaw.webp',
+      'hufflepuff': '/images/hufflepuff.webp',
   };
 
     try {

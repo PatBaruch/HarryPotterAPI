@@ -35,7 +35,8 @@
             <button id="menuButton" class="hidden md:block bg-white text-black px-4 py-2 rounded">MENU</button>
             <button id="burgerButton" class="md:hidden text-white focus:outline-none">
                 <!-- Heroicons burger menu icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
@@ -44,28 +45,50 @@
 
     <nav id="mobileMenu" class="fixed top-0 left-0 right-0 bg-white text-black menu-mobile z-10 md:hidden">
         <ul class="divide-y divide-black border-b border-black space-y-0 text-center pt-16">
-            <li><a href="elixirs.html" class="block py-2">ELIXIRS</a></li>
-            <li><a href="ingridients.html" class="block py-2">INGRIDIANTS</a></li>
-            <li><a href="spells.html" class="block py-2">SPELLS</a></li>
-            <li><a href="wizzards.html" class="block py-2">WIZZARDS</a></li>
+            <li><a href="/html/elixirs.html" class="block py-2">ELIXIRS</a></li>
+            <li><a href="/html/ingridients.html" class="block py-2">INGRIDIENTS</a></li>
+            <li><a href="/html/spells.html" class="block py-2">SPELLS</a></li>
+            <li><a href="/html/wizzards.html" class="block py-2">WIZZARDS</a></li>
         </ul>
     </nav>
 
     <nav id="desktopMenu" class="fixed top-0 right-0 w-64 h-full bg-black text-white menu-desktop z-10 hidden md:block pt-16">
         <ul class="space-y-4 text-center">
-            <li><a href="elixirs.html" class="block py-2">ELIXIRS</a></li>
-            <li><a href="ingridients.html" class="block py-2">INGRIDIANTS</a></li>
-            <li><a href="spells.html" class="block py-2">SPELLS</a></li>
-            <li><a href="wizzards.html" class="block py-2">WIZZARDS</a></li>
+            <li><a href="/html/elixirs.html" class="block py-2">ELIXIRS</a></li>
+            <li><a href="/html/ingridients.html" class="block py-2">INGRIDIENTS</a></li>
+            <li><a href="/html/spells.html" class="block py-2">SPELLS</a></li>
+            <li><a href="/html/wizzards.html" class="block py-2">WIZZARDS</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-40 md:pt-20">
-        <!-- Content about Elixirs will be dynamically populated here -->
+    <main class="pt-20 md:pt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-16 md:gap-y-16">
+                <div class="flex justify-center">
+                    <a href="/html/slytherin.html">
+                        <img src="/assets/slytherin-YroUKAhD.webp" alt="Slytherin" class="w-60 h-60 md:w-96 md:h-96">
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <a href="/html/ravenclaw.html">
+                        <img src="/assets/ravenclaw-fZxdJYMy.webp" alt="Ravenclaw" class="w-60 h-60 md:w-96 md:h-96">
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <a href="/html/gryffindor.html">
+                        <img src="/assets/gryffindor-0y70M3s5.webp" alt="Gryffindor" class="w-60 h-60 md:w-96 md:h-96">
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <a href="/html/hufflepuff.html">
+                        <img src="/assets/hufflepuff-C8K573xp.webp" alt="Hufflepuff" class="w-60 h-60 md:w-96 md:h-96">
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <script src='/js/fetchElixirs.js'></script>
     <script>
         const menuButton = document.getElementById('menuButton');
         const burgerButton = document.getElementById('burgerButton');
