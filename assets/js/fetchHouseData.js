@@ -1,5 +1,5 @@
 async function fetchHouseData(houseName) {
-    const proxyUrl = 'http://localhost:3000/api/houses';
+    const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/houses';
 
     const houseImages = {
       'slytherin': '/images/slytherin.webp',
