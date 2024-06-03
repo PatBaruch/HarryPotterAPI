@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', fetchElixirs);
 
 async function fetchElixirs() {
-  const proxyUrl = 'http://localhost:3000/api/elixirs';
+  const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/elixirs';
 
   try {
     const response = await fetch(proxyUrl);

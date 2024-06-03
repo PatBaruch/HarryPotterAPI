@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchWizards() {
-  const proxyUrl = 'http://localhost:3000/api/wizards';
+  const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/wizards';
 
   try {
     const response = await fetch(proxyUrl);

@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', fetchIngredients);
 
 async function fetchIngredients() {
-  const proxyUrl = 'http://localhost:3000/api/ingredients';
+  const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/ingredients';
 
   try {
     const response = await fetch(proxyUrl);

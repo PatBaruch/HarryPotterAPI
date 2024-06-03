@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', fetchSpells);
 
 async function fetchSpells() {
-  const proxyUrl = 'http://localhost:3000/api/spells';
+  const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/spells';
 
   try {
     const response = await fetch(proxyUrl);
