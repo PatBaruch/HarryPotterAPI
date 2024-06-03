@@ -108,7 +108,7 @@ async function fetchWizardsForLetter(wizards, letter) {
 
 
 async function fetchElixirDetails(elixirId) {
-  const proxyUrl = 'http://localhost:3000/api/elixirs'; // Adjust the URL as needed
+  const proxyUrl = 'https://harrypotterapi-b3l0.onrender.com/api/elixirs'; // Adjust the URL as needed
   const response = await fetch(proxyUrl);
   if (!response.ok) {
     throw new Error('Failed to fetch elixirs data');

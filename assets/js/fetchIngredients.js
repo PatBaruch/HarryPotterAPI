@@ -39,7 +39,7 @@ async function fetchIngredients() {
     // Populate ingredients data into the main content
     const mainContent = document.querySelector('main');
     mainContent.innerHTML =`
-    <h1 class="text-6xl font-bold mb-12 text-center">Ingridients</h1>
+    <h1 class="text-6xl font-bold mb-12 text-center">Ingredients</h1>
     ${ingredientsContentArray.join('')}
     `;
   } catch (error) {
