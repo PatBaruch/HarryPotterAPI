@@ -1,46 +1,138 @@
-# Re-create README file
-readme_content = """# 🛡️ Virus Vanguard
+# 🪄 Harry Potter REST API
 
-**Virus Vanguard** is a fast‑paced, cyber‑noir action game that turns cybersecurity into a cinematic battleground.  
-Slip into the hood of an elite code‑slinger tasked with purging a haunted network filled with rogue A.I. and malicious malware. Equip digital weaponry, decrypt arcane code, and reclaim the system—byte by byte.
+A **simple, open JSON API** that surfaces data from the Wizarding World—characters, spells, houses, books, and more.  
+Perfect for demos, learning REST, frontend mock‑ups, or sprinkling a little magic into your apps. ✨
 
-![Start Screen](assets/startscreen_4x3.png)
+> **Base URL**
 
----
-
-## ✨ Key Features
-
-| Category | Highlights |
-|----------|------------|
-| **Gameplay** | Hybrid of bullet‑hell firefights, stealth infiltration, and puzzle‑style code‑cracking. |
-| **Evolving Arsenal** | Unlock **virus blasters**, **logic bombs**, and **script companions** that level‑up as you play. |
-| **Procedural “Data Temples”** | Every run is different—rooms, enemy patterns, and loot are generated on the fly. |
-| **Synthwave Soundtrack** | Heart‑pounding original score that adapts to the action in real time. |
-| **Co‑op Raids** | Team up online to cleanse high‑level servers, split loot, and race leaderboards. |
-| **Accessibility** | Full controller & keyboard support, remappable keys, color‑blind modes. |
+```
+https://hogwarts-api.dev/api/v1
+```
 
 ---
 
-## 🏗️ Tech Stack
-
-* **Engine:** Unity 2022.3 LTS (URP)  
-* **Language:** C#  
-* **Multiplayer:** Mirror Networking  
-* **UI / HUD:** Unity UI Toolkit + TextMesh Pro  
-* **Build Targets:** Windows, macOS, Linux, WebGL
-
----
-
-## 🚀 Getting Started (Local Build)
-
-### Prerequisites
-
-1. Unity Hub with **Unity 2022.3 LTS** installed  
-2. Git ≥ 2.40  
-3. .NET SDK 6 (for server utilities)
-
-### Clone
+## ✨ Quick Start
 
 ```bash
-git clone https://github.com/YourOrg/virus-vanguard.git
-cd virus-vanguard
+# All characters
+curl https://hogwarts-api.dev/api/v1/characters
+
+# Gryffindor students only
+curl "https://hogwarts-api.dev/api/v1/characters?house=Gryffindor"
+
+# A single spell
+curl https://hogwarts-api.dev/api/v1/spells/alohomora
+```
+
+Each request returns compact **JSON** with UTF‑8 encoding and the header `Content-Type: application/json; charset=utf-8`.
+
+---
+
+## 🗺️ Endpoints
+
+| Verb | Endpoint | Description | Query Params |
+|------|----------|-------------|--------------|
+| GET | `/characters` | List every known witch/wizard. | `house`, `bloodStatus`, `patronus`, `page`, `limit` |
+| GET | `/characters/{id}` | Single character by ID or slug. | — |
+| GET | `/spells` | List all spells & charms. | `type` (Charm/Jinx/Curse/etc.), `page`, `limit` |
+| GET | `/spells/{id}` | Spell details by ID or incantation slug. | — |
+| GET | `/houses` | All four Hogwarts Houses plus stats. | — |
+| GET | `/houses/{id}` | House details by ID or name slug. | — |
+| GET | `/books` | Canon book metadata & release dates. | `page`, `limit` |
+| GET | `/books/{id}` | Single book by ID. | — |
+
+### Response Example
+
+```json
+{
+  "id": "harry-potter",
+  "name": "Harry Potter",
+  "house": "Gryffindor",
+  "ancestry": "Half‑blood",
+  "patronus": "Stag",
+  "wand": {
+    "wood": "Holly",
+    "core": "Phoenix feather",
+    "length": 11
+  },
+  "image": "https://hogwarts-api.dev/images/harry.jpg"
+}
+```
+
+---
+
+## 🔑 Authentication
+
+No auth is required for read‑only requests.  
+If you need higher rate limits or write access (coming soon), request an **API key** via `/register`.
+
+| Plan | Limit | Auth |
+|------|-------|------|
+| Free | 100 req/min | None |
+| Patronus | 2 000 req/min | Bearer API‑Key |
+| Order of the Phoenix | 10 000 req/min | Bearer API‑Key |
+
+Send keys in the header:
+
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+---
+
+## ⚠️ Error Handling
+
+| Code | Meaning | Example payload |
+|------|---------|-----------------|
+| 400 Bad Request | Invalid query or missing param | `{ "error": "Invalid house value"}`
+| 404 Not Found  | Resource doesn’t exist | `{ "error": "Spell not found"}`
+| 429 Too Many Requests | Rate limit exceeded | `{ "error": "Slow down!" }`
+| 500 Server Error | Unhandled exception | `{ "error": "Something went wrong"}`
+| 503 Service Unavailable | Maintenance window | `{ "error": "Try again later"} ` |
+
+---
+
+## 🛠️ SDKs
+
+* **JavaScript / TypeScript** – [`@hogwarts/api`](https://npmjs.com/package/@hogwarts/api)  
+* **Python** – [`hogwarts-api`](https://pypi.org/project/hogwarts-api)  
+* **Swift** – [`HogwartsKit`](https://github.com/hogwarts/HogwartsKit)
+
+---
+
+## 🧩 Roadmap
+
+- [ ] POST /feedback to submit corrections  
+- [ ] GraphQL endpoint  
+- [ ] Live Sorting‑Hat quiz micro‑service  
+- [ ] Multi‑language support (ES, FR, DE, PT‑BR)
+
+Follow the project board for progress.
+
+---
+
+## 🤝 Contributing
+
+1. **Fork** & create a branch (`git checkout -b feature/spell-audit`).
+2. Run `npm install` and `npm run test` locally.
+3. Submit a Pull Request with clear description & reference issue numbers.
+
+Please read `CONTRIBUTING.md` for code style and commit guidelines.
+
+---
+
+## 📜 License & Disclaimer
+
+This project is **MIT‑licensed** and **unofficial**.  
+Harry Potter and related IP belong to **J. K. Rowling and Warner Bros.**  
+Data provided here is for educational and fan‑project use only.
+
+---
+
+## 📧 Contact
+
+* Issues → [GitHub tracker](https://github.com/hogwarts-api/issues)
+* Email → `owlpost@hogwarts-api.dev`
+* Discord → `https://discord.gg/sortinghat`
+
+Combine REST best‑practices with a dash of Lumos—happy coding! 🌟
