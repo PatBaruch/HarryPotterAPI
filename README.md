@@ -6,7 +6,7 @@ Perfect for demos, learning REST, frontend mock‑ups, or sprinkling a little ma
 > **Base URL**
 
 ```
-https://hogwarts-api.dev/api/v1
+[https://hogwarts-api.dev/api/v1](https://harrypotterapi-b3l0.onrender.com)
 ```
 
 ---
@@ -15,13 +15,13 @@ https://hogwarts-api.dev/api/v1
 
 ```bash
 # All characters
-curl https://hogwarts-api.dev/api/v1/characters
+curl https://hogwarts-api.dev/api/v1/](https://harrypotterapi-b3l0.onrender.com)characters
 
 # Gryffindor students only
-curl "https://hogwarts-api.dev/api/v1/characters?house=Gryffindor"
+curl "https://harrypotterapi-b3l0.onrender.comcharacters?house=Gryffindor"
 
 # A single spell
-curl https://hogwarts-api.dev/api/v1/spells/alohomora
+curl https://harrypotterapi-b3l0.onrender.com/spells/alohomora
 ```
 
 Each request returns compact **JSON** with UTF‑8 encoding and the header `Content-Type: application/json; charset=utf-8`.
@@ -55,7 +55,7 @@ Each request returns compact **JSON** with UTF‑8 encoding and the header `Cont
     "core": "Phoenix feather",
     "length": 11
   },
-  "image": "https://hogwarts-api.dev/images/harry.jpg"
+  "image": "https://harrypotterapi-b3l0.onrender.com/images/harry.jpg"
 }
 ```
 
@@ -92,14 +92,6 @@ Authorization: Bearer YOUR_API_KEY
 
 ---
 
-## 🛠️ SDKs
-
-* **JavaScript / TypeScript** – [`@hogwarts/api`](https://npmjs.com/package/@hogwarts/api)  
-* **Python** – [`hogwarts-api`](https://pypi.org/project/hogwarts-api)  
-* **Swift** – [`HogwartsKit`](https://github.com/hogwarts/HogwartsKit)
-
----
-
 ## 🧩 Roadmap
 
 - [ ] POST /feedback to submit corrections  
@@ -131,7 +123,6 @@ Data provided here is for educational and fan‑project use only.
 
 ## 📧 Contact
 
-* Issues → [GitHub tracker](https://github.com/hogwarts-api/issues)
 * Email → `owlpost@hogwarts-api.dev`
 * Discord → `https://discord.gg/sortinghat`
 
