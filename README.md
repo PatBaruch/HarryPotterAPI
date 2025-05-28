@@ -6,7 +6,7 @@ Perfect for demos, learning REST, frontend mock‑ups, or sprinkling a little ma
 > **Base URL**
 
 ```
-[https://hogwarts-api.dev/api/v1](https://harrypotterapi-b3l0.onrender.com)
+https://harrypotterapi-b3l0.onrender.com
 ```
 
 ---
